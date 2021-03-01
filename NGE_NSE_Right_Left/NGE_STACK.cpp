@@ -31,9 +31,9 @@ void NEG_STACK(int arr[], int size)
         }
         s.push(arr[i]);
     }
-    for (auto velem = v.begin(); velem <= v.end(); velem++)
+    for (int j = 0; j < v.size(); j++)
     {
-        cout << *velem << endl;
+        cout << v[j] << endl;
     }
 }
 
