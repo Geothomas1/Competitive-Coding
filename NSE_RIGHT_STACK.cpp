@@ -32,7 +32,7 @@ void NSE_RIGHT_STACK(int arr[], int size)
         s.push(arr[i]);
     }
 
-    for (auto j = v.begin(); j < v.end(); j++)
+    for (auto j = v.end(); j>=v.begin(); j--)
     {
         cout << *j << endl;
     }
