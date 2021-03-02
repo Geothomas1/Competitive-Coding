@@ -2,22 +2,22 @@
 using namespace std;
 void STOCK_SPAN(int arr[], int size)
 {
-    stack<int> s;
+    stack<pair<int, int>> s;
     vector<int> v;
-    for (int i = 0; i < size - 1; i++)
+    for (int i = 0; i < size; i++)
     {
         int count = 0;
         if (s.size() == 0)
         {
             v.push_back(-1);
         }
-        else if (s.size() > 0 && s.top() > arr[i])
+        else if (s.size() > 0 && s.top().first > arr[i])
         {
-            v.push_back(i);
+            v.push_back(s.top().second);
         }
-        else if (s.size() > 0 && s.top() <= arr[i])
+        else if (s.size() > 0 && s.top().first <= arr[i])
         {
-            while (s.top() > 0 && s.top() <= arr[i])
+            while (s.size() > 0 && s.top().first <= arr[i])
             {
                 s.pop();
             }
@@ -27,14 +27,14 @@ void STOCK_SPAN(int arr[], int size)
             }
             else
             {
-                v.push_back(i);
+                v.push_back(s.top().second);
             }
         }
-        s.push(arr[i]);
+        s.push({arr[i], i});
     }
     for (int j = 0; j < v.size(); j++)
     {
-        cout << v[j] << endl;
+        cout << j-v[j] << endl;
     }
 }
 
