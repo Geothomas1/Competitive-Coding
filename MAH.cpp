@@ -6,9 +6,10 @@ void MAH(int arr[], int size)
     stack<pair<int, int>> s2;
     vector<int> v1;
     vector<int> v2;
-    vector<int> width;
+    int width[size];
     int temp[size];
     int k = 0;
+    int result[size], t;
     //NSR
 
     for (int i = size - 1; i >= 0; i--)
@@ -82,11 +83,21 @@ void MAH(int arr[], int size)
     //     cout<<v2[m]<<endl;
 
     // }
-    for (int i = 0; i <size ; i++)
+    for (int m = 0; m < size; m++)
     {
-        width[i] = (temp[i] - v2[i]) - 1;
-        cout << arr[i] * width[i] << endl;
+        width[m] = (temp[m] - v2[m]) - 1;
+        result[m] = arr[m] * width[m];
+        //cout<<result[m]<<endl;
     }
+    t = result[0];
+    for (int i = 0; i < size; i++)
+    {
+        if (t < result[i])
+        {
+            t = result[i];
+        }
+    }
+    cout << "Maximum Area Histogram | MAH =" << t << endl;
 }
 
 int main()
