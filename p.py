@@ -8,19 +8,20 @@ class Player:
         self.wicketc=wicketc
 class Team:
     def _init_(self,player):
-        n = len(player)
-        for i in n:
-            for j in range(i,n):
-                if player[i].runsc>player[j].runsc:
-                    temp=player[i]
-                    player[i]=player[j]
-                    player[j]=temp
         self.player=player
-    def getminruns(player):
-        return player[0]
+    def getminruns(self):
+        min=self.player[0]
+        for i in range(1, len(self.player)):
+            if min.runsc>self.player[i].runsc:
+                min = self.player[i]
+        return min
 
-    def getmaxwicket(player):
-        return player[len(player) - 1]
+    def getmaxwicket(self):
+        max=self.player[0]
+        for i in range(1, len(self.player)):
+            if max.runsc<self.player[i].runsc:
+                min = self.player[i]
+        return min
 
 
 n=int(input())
@@ -35,7 +36,7 @@ for i in range(n):
     player.append(Player(name,country,age,matchc,runsc,wicketc))
 
 t=Team(player)
-f1=t.getminruns(player)
-print(f1)
-f2=t.getmaxwicket(player)
+f1=t.getminruns()
+print(f1.name)
+f2=t.getmaxwicket()
 print(f2)
