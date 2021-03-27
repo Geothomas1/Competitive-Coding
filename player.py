@@ -13,7 +13,7 @@ class Team:
         #complete code 
 
     def getmaxwicket(player):
-        #complete code 
+    #     complete code 
     
 
 n=int(input())
@@ -25,22 +25,10 @@ for i in range(n):
     matchc=int(input())
     runsc=int(input())
     wicketc=int(input())
-    player.append(player(name,country,age,matchc,runsc,wicketc))
+    player.append(Player(name,country,age,matchc,runsc,wicketc))
 
 t=Team(player)
 f1=t.getminruns(player)
-for i in f1:
-    print(i.name)
-    print(i.country)
-    print(i.age)
-    print(i.matchc)
-    print(i.runsc)
-    print(i.wicketc)
+#print player data
 f2=t.getmaxwicket(player) 
-for i in f2:
-    print(i.name)
-    print(i.country)
-    print(i.age)
-    print(i.matchc)
-    print(i.runsc)
-    print(i.wicketc)
+#print player data
