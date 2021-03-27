@@ -22,7 +22,8 @@ class Team:
             if i.wicketc>maxwicket:
                 maxwicket=i.wicketc
                 k=i
-                return k    
+                return k  
+
 n=int(input())
 player=[]
 for i in range(n):
@@ -36,8 +37,10 @@ for i in range(n):
 
 t=Team(player)
 f1=t.getminruns(player)
-print(f1.name)
+for i in f1.player:
+    print(i.name)
 #print player data
 f2=t.getmaxwicket(player) 
-print(f2.name)
+for i in f2.player:
+    print(i.name)
 #print player data
