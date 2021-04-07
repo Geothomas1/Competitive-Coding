@@ -1,10 +1,13 @@
-public class Main {
-    static void mymethod()
+public class Main{
+    int x;
+    public Main(int y)
     {
-        System.out.println("Inside My method");
+        x=y;
     }
     public static void main(String[] args) {
-        System.out.println("Hello World");
-        mymethod();
+    Main obj=new Main(5);
+    System.out.println("Object number"+obj.x);
+
     }
+
 }
