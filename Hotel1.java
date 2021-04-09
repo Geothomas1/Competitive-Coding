@@ -66,7 +66,7 @@ class Hotel1{
         {
             for(int j=1;j<ht.length;j++)
             {
-                if(ht[j].price<ht[+1].price)
+                if(ht[j].price<ht[j+1].price)
                 {
                     Hotel temp=ht[j];
                     ht[j]=ht[j+1];
