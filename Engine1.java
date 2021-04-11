@@ -87,7 +87,7 @@ public class Engine1 {
 
     }
 }
-class Engine{
+class Engine2{
    public int engineid;
    public String enginename;
    public String enginetype;
