@@ -53,7 +53,7 @@ class Theatre1 {
         }
         return null;
     }
-    public static String function2(Theatre[] t,int capacity)
+    public static Theatre[] function2(Theatre[] t,int capacity)
     {
         int j=0;
         Theatre[] res;
@@ -64,8 +64,31 @@ class Theatre1 {
                 j++;
             }
         }
-        res=new Theatre()
-
+        res=new Theatre[j];
+        j=0;
+        for(int i=0;i<t.length;i++)
+        {
+            if(t[i].getseat()>capacity)
+            {
+                res[j]=t[i];
+                j++;
+            }
+        }
+        for(int i=0;i<j;i++)
+        {
+            for(int k=i+1;k<j;k++){
+                if(res[k].getrate()<res[i].getrate())
+                {
+                    Theatre temp=res[k];
+                    res[k]=res[i];
+                    res[i]=temp;
+                }
+            }
+        }
+        if(j==0)
+        return null;
+        else
+        return res;
     }
     
 }
