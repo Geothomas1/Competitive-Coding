@@ -1,6 +1,4 @@
 import java.util.Scanner;
-
-
 class Granite1 {
     
     public static void main(String[] args)
@@ -70,15 +68,15 @@ class Granite1 {
 
             }
         }
-        for(int i=0;i<j-1;i++)
+        for(int i=0;i<j;i++)
             {
-                for(int k=0;k<j-1;k++)
+                for(int k=i+1;k<j;k++)
                 {
-                    if(ans[k].getprice() > ans[k+1].getprice())
+                    if(ans[k].getprice() < ans[i].getprice())
                     {
                         Granite t=ans[k];
-                        ans[k]=ans[k+1];
-                        ans[k+1]=t;
+                        ans[k]=ans[i];
+                        ans[i]=t;
                     }
                 }
             }
